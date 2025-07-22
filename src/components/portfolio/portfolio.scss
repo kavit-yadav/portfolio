@@ -1,0 +1,134 @@
+@import "../../app.scss";
+
+.portfolio {
+  position: relative;
+
+  .progress {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    text-align: center;
+    color: orange;
+    font-size: 36px;
+
+    @include mobile {
+      padding-top: calc(100vh - 100px);
+      font-size: 24px;
+    }
+
+    .progressBar {
+      height: 10px;
+      background-color: white;
+
+      @include mobile {
+        background-color: rgba(255, 255, 255, 0.09);
+      }
+    }
+
+    h2{
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .wrapper {
+      max-width: 1366px;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+
+      @include mobile {
+        flex-direction: column;
+      }
+
+      .imageContainer {
+        flex: 1;
+        height: 50%;
+
+        @include mobile {
+          width: 100%;
+          max-height: 245px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+
+          @include mobile {
+            object-fit: contain;
+          }
+        }
+      }
+
+      .textContainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include mobile {
+          transform: none !important;
+          padding: 8px;
+          align-items: center;
+          text-align: center;
+        }
+
+        h3 {
+          font-size: 45px;
+
+          @include mobile {
+            font-size: 30px;
+          }
+        }
+
+        /*p {
+          color: gray;
+          font-size: 20px;
+
+          @include mobile {
+            font-size: 16px;
+          }
+        }*/
+        p {
+          font-size: 20px;
+          color: rgb(179, 179, 179);
+
+          .tech {
+            color: #00bfa6;   // Teal accent (customize as per your color scheme)
+            font-weight: 600;
+            font-family: monospace; // Optional, gives “code” feel
+          }
+
+          @include mobile {
+            font-size: 15px;
+          }
+        }
+
+        button {
+          background-color: orange;
+          font-size: 15px;
+          font-weight: 500;
+          border: none;
+          border-radius: 10px;
+          padding: 10px;
+          width: 200px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
